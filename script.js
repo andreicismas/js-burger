@@ -1,24 +1,32 @@
 // pulsante genera il prezzo ed eventuale sconto 
 var pulsanteCalcola = document.getElementById("button");
+
 // nome panino
 var nomePanino = document.getElementById("name");
+
 // input cupon con eventuale sconto 
 var cupon = document.getElementById("coupon");
+
 // in discount del cupon pari a15% in questo caso 
 var scontoCupone = 15;
+
 // un alert con messagiio hai vinto lo sconto 
 alert("ai vinto uno sconto")
+alert("inserisci nells sezzione discount il tuo cupon (sono_il_tuo_sconto)")
 
-alert("inserisci nells sezzione discount il tuo cupon (jkdsafhfdh6jufds)")
 // lista codici sconto 
-var cuponScount = ["jkdsafhfdh6jufds", "HYT5GF44RDFV",]
+var cuponScount = ["sono_il_tuo_sconto", "HYT5GF44RDFV",]
+
+// funtione calcola sconti e giunte pannino 
 pulsanteCalcola.addEventListener("click", function () {
+    // il costo del panino base
     var costoPanino = 50;
 
-
+// variabile che selleziona tutti ingredienti che si trovano in HTML
     var opzioniIngredienti = document.querySelectorAll(".ingredient [type='checkbox']");
-    console.log(opzioniIngredienti)
 
+    console.log(opzioniIngredienti)
+// il controllo con for se nella nostra lista /variabile "opzioniIngredienti" sonno checked
     for (var i = 0; i < opzioniIngredienti.length; i++) {
         var ingredienti = opzioniIngredienti[i];
 
@@ -28,26 +36,28 @@ pulsanteCalcola.addEventListener("click", function () {
 
     }
 
+    // recupero valore del codice che il utente ha inserito
     var codiceInseritoCliente = cupon.value
 
+    // il controlla tramite una funzione se il codice e presente nella nostra lista
     var isValidNumber = codiceScontato(codiceInseritoCliente, cuponScount)
 
     if (isValidNumber) {
-
         var scontoDaFare = scontoCupone * costoPanino / 100
-
         costoPanino -= scontoDaFare
     }
-    
+   
+    // il risultato se e  true lo mostriamo in HTML
     document.getElementById("price").innerText = costoPanino
 
 
 });
 
+    // la funzione numero inserito  del 
+
 function codiceScontato(codiceScount, listaCcodici) {
 
     var codiceInseritoModificato = codiceScount.toLowerCase()
-
     var codiceValido = false
 
     if (listaCcodici.indexOf(codiceInseritoModificato) > -1) {
