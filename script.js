@@ -12,10 +12,10 @@ var scontoCupone = 15;
 
 // un alert con messagiio hai vinto lo sconto 
 alert("ai vinto uno sconto")
-alert("inserisci nells sezzione discount il tuo cupon (sono_il_tuo_sconto)")
+alert("inserisci nells sezzione discount il tuo cupon (sbt5u339iu61)")
 
 // lista codici sconto 
-var cuponScount = ["sono_il_tuo_sconto", "HYT5GF44RDFV",]
+var cuponScount = ["sbt5u339iu61", "sde7u665vgbn",]
 
 // funtione calcola sconti e giunte pannino 
 pulsanteCalcola.addEventListener("click", function () {
